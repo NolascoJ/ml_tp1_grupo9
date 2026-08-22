@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-df = pd.read_csv("insurance.csv")
+# El análisis exploratorio se realiza solamente sobre el conjunto de entrenamiento.
+df = pd.read_csv("insurance_train.csv")
 numericas = df.select_dtypes(include="number").columns
 categoricas = df.select_dtypes(exclude="number").columns
 
