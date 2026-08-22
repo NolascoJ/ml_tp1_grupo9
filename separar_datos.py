@@ -29,8 +29,7 @@ def main() -> None:
     train, test = train_test_split(
         df,
         test_size=TEST_SIZE,
-        random_state=RANDOM_STATE,
-        stratify=df["smoker"],
+        random_state=RANDOM_STATE
     )
 
     # Se restablece el índice sin modificar ninguna de las variables.
