@@ -1,3 +1,4 @@
 kagglehub[pandas-datasets]
 matplotlib
 scikit-learn
+pandas
