@@ -5,4 +5,3 @@ __pycache__/
 TP1. Regresión e Introducción a la evaluación de modelos.pdf
 # El conjunto de test se mantiene local y reservado para la evaluación final.
 .holdout/
-test/
