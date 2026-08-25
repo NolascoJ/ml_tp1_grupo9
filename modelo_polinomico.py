@@ -11,7 +11,7 @@ from sklearn.preprocessing import OneHotEncoder, PolynomialFeatures, StandardSca
 ARCHIVO_TRAIN = "insurance_train.csv"
 GRADOS = (1, 2, 3)
 GRADO_LASSO = 2
-LAMBDAS_LASSO = (0.0001, 0.001, 0.01, 0.1, 1)
+LAMBDAS_LASSO = (0.001, 0.01, 0.1, 1)
 N_SPLITS = 5
 RANDOM_STATE = 42
 
