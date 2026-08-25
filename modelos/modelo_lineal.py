@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.linear_model import LinearRegression
@@ -5,7 +7,10 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.model_selection import KFold, cross_validate
 
-df_train = pd.read_csv("insurance_train.csv")
+RAIZ_PROYECTO = Path(__file__).resolve().parents[1]
+ARCHIVO_TRAIN = RAIZ_PROYECTO / "data" / "processed" / "insurance_train.csv"
+
+df_train = pd.read_csv(ARCHIVO_TRAIN)
 
 X_train = df_train.drop(columns="charges")
 y_train = df_train["charges"]

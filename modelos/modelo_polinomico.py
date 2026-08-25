@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Optional
 
 import pandas as pd
@@ -8,7 +9,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, PolynomialFeatures, StandardScaler
 
 
-ARCHIVO_TRAIN = "insurance_train.csv"
+RAIZ_PROYECTO = Path(__file__).resolve().parents[1]
+ARCHIVO_TRAIN = RAIZ_PROYECTO / "data" / "processed" / "insurance_train.csv"
 GRADOS = (1, 2, 3)
 GRADO_LASSO = 2
 LAMBDAS_LASSO = (0.001, 0.01, 0.1, 1)

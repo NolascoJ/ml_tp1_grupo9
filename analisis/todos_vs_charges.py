@@ -1,9 +1,12 @@
+from pathlib import Path
+
 import matplotlib.pyplot as plt
 import pandas as pd
 
 
-ARCHIVO_TRAIN = "insurance_train.csv"
-ARCHIVO_SALIDA = "todos_vs_charges.png"
+RAIZ_PROYECTO = Path(__file__).resolve().parents[1]
+ARCHIVO_TRAIN = RAIZ_PROYECTO / "data" / "processed" / "insurance_train.csv"
+ARCHIVO_SALIDA = RAIZ_PROYECTO / "resultados" / "graficos" / "todos_vs_charges.png"
 VARIABLE_OBJETIVO = "charges"
 
 
@@ -72,6 +75,7 @@ def main() -> None:
 
     fig.suptitle("Variables predictoras vs. charges — entrenamiento", fontsize=15)
     fig.tight_layout()
+    ARCHIVO_SALIDA.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(ARCHIVO_SALIDA, dpi=150, bbox_inches="tight")
     print(f"Gráfico guardado en {ARCHIVO_SALIDA}")
     plt.show()

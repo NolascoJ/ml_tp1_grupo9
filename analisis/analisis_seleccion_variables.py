@@ -33,8 +33,9 @@ from sklearn.feature_selection import mutual_info_regression
 from sklearn.preprocessing import OrdinalEncoder
 
 
-ARCHIVO_TRAIN = Path("insurance_train.csv")
-CARPETA_SALIDA = Path("resultados_seleccion_variables")
+RAIZ_PROYECTO = Path(__file__).resolve().parents[1]
+ARCHIVO_TRAIN = RAIZ_PROYECTO / "data" / "processed" / "insurance_train.csv"
+CARPETA_SALIDA = RAIZ_PROYECTO / "resultados" / "seleccion_variables"
 CARPETA_GRAFICOS = CARPETA_SALIDA / "graficos"
 VARIABLE_OBJETIVO = "charges"
 

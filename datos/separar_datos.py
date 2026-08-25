@@ -4,9 +4,10 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 
-ARCHIVO_ORIGINAL = Path("insurance.csv")
-ARCHIVO_TRAIN = Path("insurance_train.csv")
-ARCHIVO_TEST = Path("test/insurance_test.csv")
+RAIZ_PROYECTO = Path(__file__).resolve().parents[1]
+ARCHIVO_ORIGINAL = RAIZ_PROYECTO / "data" / "raw" / "insurance.csv"
+ARCHIVO_TRAIN = RAIZ_PROYECTO / "data" / "processed" / "insurance_train.csv"
+ARCHIVO_TEST = RAIZ_PROYECTO / "data" / "test" / "insurance_test.csv"
 
 TEST_SIZE = 0.20
 RANDOM_STATE = 42
@@ -33,6 +34,7 @@ def main() -> None:
     )
 
     # Se restablece el índice sin modificar ninguna de las variables.
+    ARCHIVO_TRAIN.parent.mkdir(parents=True, exist_ok=True)
     ARCHIVO_TEST.parent.mkdir(parents=True, exist_ok=True)
     train.reset_index(drop=True).to_csv(ARCHIVO_TRAIN, index=False)
     test.reset_index(drop=True).to_csv(ARCHIVO_TEST, index=False)

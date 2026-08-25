@@ -1,7 +1,19 @@
 .env
 *.pyc
+__pycache__/
 TP1. Regresión e Introducción a la evaluación de modelos.pdf
 
-# Ignorar todas las carpetas de la raíz excepto test.
+# Ignorar las carpetas de la raíz por defecto, excepto las que forman parte
+# de la estructura del proyecto.
 /*/
-!/test/
+!/analisis/
+!/analisis/**
+!/data/
+!/data/**
+!/datos/
+!/datos/**
+!/modelos/
+!/modelos/**
+
+# Resultados reproducibles generados por los scripts.
+/resultados/

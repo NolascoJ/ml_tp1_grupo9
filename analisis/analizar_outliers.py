@@ -1,7 +1,10 @@
+from pathlib import Path
+
 import pandas as pd
 
 
-ARCHIVO_TRAIN = "insurance_train.csv"
+RAIZ_PROYECTO = Path(__file__).resolve().parents[1]
+ARCHIVO_TRAIN = RAIZ_PROYECTO / "data" / "processed" / "insurance_train.csv"
 FACTOR_IQR = 1.5
 
 

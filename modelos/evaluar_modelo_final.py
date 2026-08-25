@@ -6,8 +6,9 @@ from sklearn.metrics import root_mean_squared_error
 from modelo_polinomico import crear_modelo_polinomico
 
 
-ARCHIVO_TRAIN = Path("insurance_train.csv")
-ARCHIVO_TEST = Path("test/insurance_test.csv")
+RAIZ_PROYECTO = Path(__file__).resolve().parents[1]
+ARCHIVO_TRAIN = RAIZ_PROYECTO / "data" / "processed" / "insurance_train.csv"
+ARCHIVO_TEST = RAIZ_PROYECTO / "data" / "test" / "insurance_test.csv"
 GRADO = 2
 
 
